@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="styles.css">
+
+<head>
+    <!--Idea stolen from OSV-5M -->
+    <title>LearnableHandwriter</title> <!--add title-->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+      src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="images/coronation.png">
+</head>
+
+<body>
+    <div class="container"                    
+    style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+
+        <h1> Interpretable Deep Learning for Palaeographic Variability Analysis <br> revisiting the scribal hands of Charles V’ Grandes Chroniques de France (Paris, BnF, fr., 2813) <br>
+            <div class="iwcp"                    
+            style="display: flex; justify-content: center;"> Scriptoium, vol. x, p. x </h1>
+        <div class="authors">
+            <p style="font-size: 18px;">
+                <a href="https://malamatenia.github.io">Malamatenia Vlachou Efstathiou</a><sup>1,2</sup> &nbsp;
+            </p>
+        </div>
+        <div class="affiliations" style="font-size: 16px;">
+            <sup>1</sup> Institut de Recherche et d’Histoire des Textes, Paris, Île-de-France<br>
+            <sup>2.</sup> LIGM, Ecole des Ponts, Univ Gustave Eiffel, CNRS, Marne-la-Vallee<br>
+        </div>
+
+        <div class="icon-links">
+           <a href="paper.pdf" target="_blank">
+                <div class="center-content">
+                    <div class="img-wrapper">
+                        <img src="images/pdf-mark.png" , height="40px" , alt="PDF">
+                    </div>
+                    <p><b>Paper</b></p>
+                </div>
+            </a>
+            <a href="https://github.com/malamatenia/learnable-scriber/" target="_blank">
+                <div class="center-content">
+                    <div class="img-wrapper">
+                        <img src="images/github-mark.png" , height="40px" , alt="GitHub">
+                    </div>
+                    <p><b>Code</b></p>
+                </div>
+            </a>
+
+            <a href="" target="_blank">
+                <div class="center-content">
+                    <div class="img-wrapper">
+                        <img src="images/poster-mark.png" , height="40px" , alt="GitHub">
+                    </div>
+                    <p><b>Poster</b></p>
+                </div>
+            </a>
+
+            <a href="#bibtex">
+                <div class="center-content">
+                    <div class="img-wrapper">
+                        <img src="images/bibtex-mark.png" , height="40px" , alt="GitHub">
+                    </div>
+                    <p><b>BibTeX</b></p>
+                </div>
+            </a>
+        </div>
+
+        <div class="abstract" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+            <h2>Abstract</h2>
+            <div class="para">
+                <p>
+                    This study introduces an interpretable scribal hand characterization and variability analysis based on a deep learning framework 	combining graphic tools with statistical analysis of scribal practices. Designed to bridge the gap between traditional palaeographic methods — based on qualitative observations — and automatic computational models, our approach enables interpretable character-level inter- and intra-scribal variation analysis and graphic profiling. We demonstrate our method to Charles V’s copy of the Grandes Chroniques de France (Paris, BnF, fr. 2813), revisiting the traditional attribution to two royal scribes of Charles’ V, Henri de Trévou and Raoulet d’Orléans. Through the definition of graphic profiles and complementary statistical analysis of abbreviation usage and space management, we offer a more systematic and context-aware understanding of scribal behaviour. Beyond this case study, the approach opens new possibilities for palaeographic inquiry, from mapping script evolution to characterizing scribal variability in a communicable and interpretable way.
+                 </p>
+            </div>
+        </div>
+
+        <div class="Method"
+        style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+
+            <h2>The Graphic Profiles of BnF, fr. 2813</h2>
+            
+            <p> .
+                <figure class="centered-image"> 
+                    <div class="clickable-image">
+                    <img src="images/PCA_Combined_plot.png" alt="Combined PCA plot"> </div>
+                </figure>
+            </p>
+
+            <p>See the individual letter plots <a href="suppmat.html">here</a>. </p>
+
+            <p> <b>Figure 1:</b> For our analysis, we trained multiple models to obtain character prototypes at different levels of granularity: (i) a script type model for <i>Textualis</i>, (ii) script subtype models for Northern and Southern <i>Textualis</i>, and (iii) document level models for each document in our dataset. We use the <i>Textualis</i> script type model as reference model, and finetune all other models from it.
+                <figure class="centered-image">
+                    <div class="clickable-image">
+                    <img src="images/grids/webpage_prototypes.jpg" alt="Letter graph"> </div>
+                </figure>
+            </p>
+                        
+            <p> <b>Figure 2</b>: To quantitatively analyze character prototypes, we introduce an adapted comparison graph, where each point represents a specific document character prototype, with its coordinates defined as its distance in pixel space to two selected prototypes. We employ two complementary types of graphs for our analysis, Character and Document graphs. Blue, resp. red, markers signify Northern, resp. Southern <i>Textualis</i> documents.
+               
+                <div class="side-by-side">
+                    <img src="images/method/example-letter.png" alt="Letter graph"> 
+                    <p><b>Figure 2a: Character graphs</b> concentrate on a single character across all documents.</p>
+                    <img src="images/method/example-manuscript.png" alt="Letter graph">
+                     <p><b>Figure 2b: Document graphs</b> concentrate on all characters across a document.</p>
+                </div>
+            </p>
+            <p>See the comparison graphs for all the characters and documents <a href="suppmat.html">here</a>. </p>
+        </div>
+
+        <div class="Method" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+            <h2>References</h2>
+            <p>
+                <li>The palaeography of Gothic manuscript books: From the twelfth to the early sixteenth century. Derolez, A. Cambridge University Press 2003.</li>
+               <li><a href="https://arxiv.org/abs/2302.01660" target="_blank">The Learnable Typewriter: A Generative Approach to Text Analysis</a> Siglidis, I., Gonthier, N., Gaubil, J., Monnier, T., & Aubry, M., ICDAR 2024.</li>
+            </p>
+        </div>
+        <div style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+            <a name="bibtex" style="text-decoration: none">
+                <h2>Cite Us</h2>
+            </a>
+            <div class="bibtex-container">
+                <pre class="code">
+                    <code class="language-bibtex">
+@article{vlachou2024interpretable,
+    title = {An Interpretable Deep Learning Approach for Morphological Script Type Analysis},
+    author = {Vlachou-Efstathiou, Malamatenia and Siglidis, Ioannis and Stutzann, Dominique and Aubry, Mathieu},
+    publisher = {Document Analysis and Recognition--ICDAR 2021 Workshops: Athens, Greece, August 30--September 4, 2023, Proceedings},
+    year = {2024},
+    organization={Springer}, 
+    url={https://arxiv.org/abs/2408.11150}
+}</code>                        
+                    <button class="copy-code-button"><i class="fa-regular fa-clone"></i></button>
+                </pre>
+            </div>
+        </div>
+
+
+        <div class="Method"
+            style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+            <h2>Acknowledgements</h2>
+            <div class="para">
+                <p>This study was supported by the CNRS through MITI and the 80|Prime program (CrEMe Caractérisation des écritures médiévales), and by the European Research Council (ERC project DISCOVER, number 101076028). We thank Ségolène Albouy, Raphaël Baena, Sonat Baltacı, Syrine Kalleli, and Elliot Vincent for valuable feedback.</p>
+            </div>
+        </div>
+            
+
+        <script>
+            // Add click event listener to each copy code button
+            document.querySelectorAll(".copy-code-button").forEach(function(button) {
+                button.addEventListener("click", function() {
+                    // Get the code element
+                    var codeElement = this.parentElement.querySelector("code");
+
+                    // Create a temporary textarea to copy the code
+                    var textarea = document.createElement("textarea");
+                    textarea.value = codeElement.innerText;
+                    document.body.appendChild(textarea);
+
+                    // Select and copy the code
+                    textarea.select();
+                    document.execCommand("copy");
+
+                    // Remove the temporary textarea
+                    document.body.removeChild(textarea);
+
+                    // Change the button text to "Copied!" for a short duration
+                    var originalText = this.innerHTML;
+                    this.innerHTML = "Copied!";
+                    setTimeout(function() {
+                        button.innerHTML = originalText;
+                    }, 1500);
+                });
+            });
+        </script>
+
+    <script src="scripts.js"></script>
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+</body>
+
+</html>
