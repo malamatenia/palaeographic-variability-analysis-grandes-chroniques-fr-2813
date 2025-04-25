@@ -1,0 +1,73 @@
+metadata_btv1b84472995,,,,,,,,,,,,
+Doc,Graphic_Profile,ID,Scribe,Folio,Gathering,Codicological_status,Production_phase,Reign,Chapter,Illustration,Date,header
+HT1,GP1,btv1b84472995_f57,HenriTrevou,25r,,vol1,phase1,Childebert Ier,XVII,,,
+HT2,GP1,btv1b84472995_f960,HenriTrevou,44v,,vol1,phase1,Childéric Ier,XVII,,,N/A
+HT3,GP1,btv1b84472995_f141,HenriTrevou,64r,,vol1,phase1,Clotaire Ier,VI,,,
+HT4,GP1,btv1b84472995_f173,HenriTrevou,83r,,vol1,phase1,Pepin,XXVIII,,,
+HT5,GP1,btv1b84472995_f176,HenriTrevou,84v,,vol1,phase1,Pepin,XXX,,,N/A
+HT6,GP1,btv1b84472995_f212,HenriTrevou,102v,,vol1,phase1,Charlemagne,VII,,,
+HT7,GP1,btv1b84472995_f251,HenriTrevou,122r,XVI(8),vol1,phase1,Charlemagne,II,,,
+HT8,GP1,btv1b84472995_f290,HenriTrevou,141v,,vol1,phase1,Louis le Pieux,XVII,,,N/A
+HT9,GP1,btv1b84472995_f328,HenriTrevou,160v,,vol1,phase1,Louis II le Bègue,I,,,N/A
+HT10,GP1,btv1b84472995_f347,HenriTrevou,170r,,vol1,phase1,Louis le Simple,V,,,
+HT11,GP1,btv1b84472995_f365,HenriTrevou,179r,,vol1,phase1,Henri Ier (roi des Francs),IIII,,,
+HT12,GP1,btv1b84472995_f380,HenriTrevou,186v,,vol1,phase1,Philippe Ier,IX,,,N/A
+HT13,GP1,btv1b84472995_f405,HenriTrevou,199r,,vol1,phase1,Louis VI le Gros,X,,,
+HT14,GP1,btv1b84472995_f457,HenriTrevou,225r,,vol1,phase1,Philippe II Auguste,V-VI,,,
+HT15,GP1,btv1b84472995_f483,HenriTrevou,238r,,vol1,phase1,Philippe II Auguste,VI,,,
+HT16,GP1,btv1b84472995_f531,HenriTrevou,262r,,vol1,phase1,Louis VIII le Lion,III,,,
+RO1,GP2,btv1b84472995_f538,RaouletOrleans,265v,XXV(3),vol2,phase3,Saint Louis,Table de matières,,,N/A
+HT17,GP1,btv1b84472995_f552,HenriTrevou,272v,,vol2,phase1,Saint Louis,XXIIII+XXV,,,N/A
+HT18,GP1,btv1b84472995_f557,HenriTrevou,275r,,vol2,phase1,Saint Louis,XXXI,,1242,
+RO2,GP2,btv1b84472995_f589,RaouletOrleans,291r,XXXVIII(10),add,phase3,Saint Louis,LXXX+ IIII (no number ind.),,1259/1260,
+HT19,GP1,btv1b84472995_f601,HenriTrevou,297r,,vol2,phase1,Saint Louis,LXXX + XVIII,,1268,
+HT20,GP1,btv1b84472995_f641,HenriTrevou,317r,,vol2,phase1,Philippe III le Hardi,XLV,,1286,
+HT21,GP1,btv1b84472995_f660,HenriTrevou,326v,,vol2,phase1,Philippe IV le Bel,XLII,,1302,
+HT22,GP1,btv1b84472995_f678,HenriTrevou,335r,,vol2,phase1,Philippe IV le Bel,LXVI-LXVII,,1311,
+RO3,GP2,btv1b84472995_f715,RaouletOrleans,353r,XLVI(8),add,phase3,Philippe VI de France,Table de matières,,N/A,N/A
+RO4a,GP2,btv1b84472995_f716a,RaouletOrleans,353va,,add,phase3,Philippe VI de France,Table de matières,,N/A,N/A
+RO4b,GP3,btv1b84472995_f716b,RaouletOrleans,353vb,,add,phase3,Philippe VI de France,I,,N/A,N/A
+HT23,GP1,btv1b84472995_f722,HenriTrevou,356v,,vol2,phase1,Philippe VI de France,V,,1328,N/A
+RO5,GP2,btv1b84472995_f723,RaouletOrleans,357r,XLVII(9),vol2,phase3,Philippe VI de France,VI (no number ind.),"Coment le roy d'Angleterre se mist en mer pour venir en la cité d'Amiens faire hommage au roy de France de la duchié d'Acquitaine et de la conté de Pontieu, comme homme du roy de France",1329,
+RO6,GP2,btv1b84472995_f725,RaouletOrleans,358r,,vol2,phase3,Philippe VI de France,VII (no number ind.),,,
+HT24,GP1,btv1b84472995_f761,HenriTrevou,376r,,vol2,phase1,Philippe VI de France,XXXI,,1343,
+RO7,GP2,btv1b84472995_f781,RaouletOrleans,386r,L(8),vol2,phase2,Philippe VI de France,XLII,,1347,
+RO8,GP2,btv1b84472995_f786,RaouletOrleans,388v,,vol2,phase2,Philippe VI de France,XLV (fin de num. tdm),,1350,N/A
+RO9,GP2,btv1b84472995_f804,RaouletOrleans,397v,,vol2,phase2,Jean II le Bon,(no number ind.) (XIV),,1354,N/A
+RO10,GP2,btv1b84472995_f808,RaouletOrleans,399v,,vol2,phase2,Jean II le Bon,(no number ind.) (XX),,1356,N/A
+RO11,GP2,btv1b84472995_f811,RaouletOrleans,400r,,vol2,phase2,Jean II le Bon,(no number ind.) (XX),,1356,
+RO12,GP2,btv1b84472995_f836,RaouletOrleans,412v,,vol2,phase2,Jean II le Bon,(no number ind.) (LXVIII),,1358,N/A
+RO13,GP2,btv1b84472995_f846,RaouletOrleans,417v,,vol2,phase2,Jean II le Bon,(no number ind.) (LXXXVI),,1358,N/A
+RO14,GP2,btv1b84472995_f876,RaouletOrleans,432v,,vol2,phase2,Jean II le Bon,(no number ind.) (CXXVII),,1360,N/A
+RO15,GP2,btv1b84472995_f879,RaouletOrleans,434r,,vol2,phase2,Jean II le Bon,(no number ind.) (CXXIX),,1360,
+RO16,GP2,btv1b84472995_f888,RaouletOrleans,438v,,vol2,phase2,Jean II le Bon,(no number ind.) (CXL-I),,1364,N/A
+RO17,GP3,btv1b84472995_f889,RaouletOrleans,439r,,vol2,phase2,Charles V,(no number ind.) (I),"Coment Charles, ainsné fils du roy Jehan, qui trespassa en Angleterre, fu sacré et enoint a roy de France en l'églyse de Reims, et aussi fu la royne sa femme",1364,
+RO18,GP3,btv1b84472995_f890,RaouletOrleans,439v,,vol2,phase2,Charles V,(no number ind.) (II-III),Coment monseigneur Bertran du Guesclin fu fait connestable de France.,1365,N/A
+RO19,GP2,btv1b84472995_f893,RaouletOrleans,441r,LVIII(8),vol2,phase2,Charles V,(no number ind.) (VII),,1366,
+RO20,GP2,btv1b84472995_f899,RaouletOrleans,444r,,vol2,phase2,Charles V,(no number ind.) (XIII),,1368,
+RO21,GP2,btv1b84472995_f910,RaouletOrleans,449v,,vol2,phase2,Charles V,(no number ind.) (XX),,1369,N/A
+RO22,GP2,btv1b84472995_f924,RaouletOrleans,456v,,vol2,phase2,Charles V,(no number ind.) (XXII),,1369,N/A
+RO23,GP2,btv1b84472995_f926,RaouletOrleans,457v,,vol2,phase2,Charles V,(no number ind.) (XXII),,1369,N/A
+RO24,GP3,btv1b84472995_f940,RaouletOrleans,464v,LX(8),vol2,phase3,Charles V,(no number ind.) (XLV),,1377,no header (464v-483r)
+RO25,GP3,btv1b84472995_f943,RaouletOrleans,466r,,vol2,phase3,Charles V,(no number ind.) (XLIX),"Coment ceux qui tenoient le chastel d'Auroy se rendirent à l'obéissance du roy de France, par le sire de Cliçon.",1377,no header
+RO26,GP3,btv1b84472995_f945,RaouletOrleans,467r,LXII(8),add,phase3,Charles V,(no number ind.) (L),"Coment Charles, empereur de Rome, escript au roy que il vouloit venir en France.",Noel 1377,no header
+RO27,GP3,btv1b84472995_f950,RaouletOrleans,469v,,add,phase3,Charles V,(no number ind.) (LVII),Coment le roy de France se parti de son palais pour aler à l'encontre de l'empereur son oncle.,1378,no header
+RO28,GP3,btv1b84472995_f955,RaouletOrleans,472r,,add,phase3,Charles V,(no number ind.) (LXII),Des présens que ceux de la bonne ville de Paris firent à l'empereur et à son fils le roy des Romains.,1378,no header
+RO29,GP3,btv1b84472995_f959,RaouletOrleans,474r,,add,phase3,Charles V,64 (post. arab. num.),,1378,no header
+RO30,GP3,btv1b84472995_f963,RaouletOrleans,476r,,add,phase3,Charles V,65 (post. arab. num.),,1378,no header
+RO31,GP3,btv1b84472995_f966,RaouletOrleans,477v,,add,phase3,Charles V,67-68 (post. arab. num.),,1378,no header
+RO32,GP3,btv1b84472995_f969,RaouletOrleans,479r,,add,phase3,Charles V,71-73 (post. arab. num.),"Des aneaux que le roy et l'empereur s'entredonnèrent, et coment l'empereur et le roy pristrent congié l'un de l'autre amiablement et piteusement, et de ceux qui convoièrent ledit empereur.",1378,no header
+RO33,GP3,btv1b84472995_f971,RaouletOrleans,480r,,add,phase3,Charles V,75-78 (post. arab. num.),"Des lettres de l'empereur que son chancellier bailla au daulphin, contenans les choses dessus dites.",1378,no header
+RO34,GP3,btv1b84472995_f972,RaouletOrleans,480v,,add,phase3,Charles V,78-79 (post. arab. num.),Comment le corps de la Royne fu porte a notre dame. Et lendemain a Saint Denis en france en grant honneur ,1378,no header
+RO35,GP3,btv1b84472995_f973,RaouletOrleans,481r,LXIV(6),vol2,phase3,Charles V,79-84 (post. arab. num.),,1378,no header
+RO36,GP3,btv1b84472995_f975,RaouletOrleans,482r,,vol2,phase3,Charles V,86 (post. arab. num.),,1378,no header
+RO37,GP3,btv1b84472995_f977,RaouletOrleans,483r,,vol2,phase3,Charles V,86 (post. arab. num.),,1378,no header (last f.)
+RO38,GP3,btv1b84472995_f978,RaouletOrleans,483v,,vol2,phase3,Charles V,86 (post. arab. num.),,1378,N/A
+RO39a,GP3,btv1b84472995_f979a,RaouletOrleans,484ra,,vol2,phase3,Charles V,87 (post. arab. num.),,1378,
+RO39b,GP4,btv1b84472995_f979b,RaouletOrleans,484rb,,vol2,phase3,Charles V,87 (post. arab. num.),,1378,
+RO40,GP4,btv1b84472995_f981,RaouletOrleans,485r,,vol2,phase3,Charles V,88 (post. arab. num.),,1378,
+RO41,GP4,btv1b84472995_f984,RaouletOrleans,486v,,vol2,phase3,Charles V,91-92 (post. arab. num.),,1378,N/A
+RO42,GP4,btv1b84472995_f987,RaouletOrleans,488r,,vol2,phase3,Charles V,93 (post. arab. num.),,1378,
+RO43,GP4,btv1b84472995_f991,RaouletOrleans,490r,,vol2,phase3,Charles V,94-6 (post. arab. num.),,1378,N/A
+RO44,GP4,btv1b84472995_f994,RaouletOrleans,491v,,vol2,phase3,Charles V,100 (post. arab. num.),,1379,
+,,,,,,,,,,,,None on 492r(fin)
