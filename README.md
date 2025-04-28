@@ -7,7 +7,7 @@
 
 This repository contains the data and code developed for the paper Interpretable Deep Learning for Palaeographic Variability Analysis; revisiting the scribal hands of Charles V’ Grandes Chroniques de France (Paris, BnF, fr., 2813). 
 
-### Abstract 
+## Abstract 
 This study introduces an interpretable scribal hand characterization and variability analysis based on a deep learning framework combining graphic tools with statistical analysis of scribal practices. Designed to bridge the gap between traditional palaeographic methods — based on qualitative observations — and automatic computational models, our approach enables interpretable character-level inter- and intra-scribal variation analysis and graphic profiling. We demonstrate our method to Charles V’s copy of the Grandes Chroniques de France (Paris, BnF, fr. 2813), revisiting the traditional attribution to two royal scribes of Charles’ V, Henri de Trévou and Raoulet d’Orléans. Through the definition of graphic profiles and complementary statistical analysis of abbreviation usage and space management, we offer a more systematic and context-aware understanding of scribal behaviour. Beyond this case study, the approach opens new possibilities for palaeographic inquiry, from mapping script evolution to characterizing scribal variability in a communicable and interpretable way.
 
 ## Repository Structure
@@ -45,7 +45,7 @@ root/
 ```
 
 ## Data: 
-Data are available also on Zenodo: [![DOI](https://zenodo.org/badge/971354555.svg)](https://doi.org/10.5281/zenodo.15282371)
+Data are available also on Zenodo: [DOI](https://doi.org/10.5281/zenodo.15282371)
 
 ## 🔤 Prototype Generation: 
 
