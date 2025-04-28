@@ -22,13 +22,15 @@ root/
 │       ├── <btv1b84472995_f1>
 │       ├── <btv1b84472995_f2>/
 │                ...             
-│   ├── metadata_btv1b84472995.csv  # Metadata (includes details about the dataset)
+│   ├── metadata_btv1b84472995.csv 
 │
 ├── prototypes/                # Prototypes created with Learnable Typewriter method
 │   ├── <folio_ID>/
-│   ├── <btv1b84472995_f1>/       # Folders for each page, containing prototypes for letters a-z
+│   ├── <btv1b84472995_f1>/    # Folders for each page, containing prototypes for letters a-z
 │   ├── <btv1b84472995_f2>/
 │              ...
+│   ├── transcribe.json     # Mapping between characters and their indices
+│   ├── prototypes_paper_grid.jpeg # Overview of the prototypes 
 │
 ├── notebooks/              # Jupyter Notebooks for analysis
 │   ├── PCA.ipynb
