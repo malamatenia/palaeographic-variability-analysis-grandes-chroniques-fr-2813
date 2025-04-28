@@ -29,14 +29,14 @@ root/
 │   ├── <btv1b84472995_f1>/    # Folders for each page, containing prototypes for letters a-z
 │   ├── <btv1b84472995_f2>/
 │              ...
-│   ├── transcribe.json     # Mapping between characters and their indices
+│   ├── transcribe.json        # Mapping between characters and their indices
 │   ├── prototypes_paper_grid.jpeg # Overview of the prototypes 
 │
-├── notebooks/              # Jupyter Notebooks for analysis
+├── notebooks/                 # Jupyter Notebooks for analysis
 │   ├── PCA.ipynb
 │   └── statistical_analysis.ipynb
 │
-└── results/                # Results folder for the outputs of the notebooks
+└── results/                   # Results folder for the outputs of the notebooks
     ├── <graphic_profiles/>
     ├── <statistical_analysis/> 
 ```
