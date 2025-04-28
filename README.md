@@ -64,7 +64,6 @@ Character prototypes are generated using the [Learnable Typewriter](https://lear
 @misc{vlachou2025variability,
     title = {Interpretable Deep Learning for Palaeographic Variability Analysis; revisiting the scribal hands of Charles V’ Grandes Chroniques de France (Paris, BnF, fr., 2813)},
     author = {Vlachou-Efstathiou, Malamatenia},
-    publisher = {Scriptorium},
     year = {2025},
 ```
 
