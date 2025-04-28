@@ -45,7 +45,7 @@ root/
 ```
 
 ## Data: 
-Available also on Zenodo: 10.5281/zenodo.15282371
+Data are available also on Zenodo: [![DOI](https://zenodo.org/badge/971354555.svg)](https://doi.org/10.5281/zenodo.15282371)
 
 ## 🔤 Prototype Generation: 
 
