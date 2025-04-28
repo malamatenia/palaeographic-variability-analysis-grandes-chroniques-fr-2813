@@ -24,7 +24,7 @@ root/
 │                ...             
 │   ├── metadata_btv1b84472995.csv 
 │
-├── prototypes/                # Prototypes created with Learnable Typewriter method
+├── prototypes/                # Letter prototypes
 │   ├── <folio_ID>/
 │   ├── <btv1b84472995_f1>/    # Folders for each page, containing prototypes for letters a-z
 │   ├── <btv1b84472995_f2>/
@@ -44,11 +44,15 @@ root/
 ## Data: 
 Available also on Zenodo: 10.5281/zenodo.15282371
 
+## 🔤 Prototype Generation: 
+
+Character prototypes are generated using the [Learnable Typewriter](https://learnable-typewriter.github.io/) approach. The Learnable Typewriter is a deep instance segmentation model designed to reconstruct text lines by learning the dictionary of visual patterns that make it up. Given an input image of a text line, the model’s task is to reconstruct the input image, by compositing the learned character prototypes onto a simple background. Each prototype is a grayscale image can be thought of as the optimized average shape of all occurrences of a character in the training data, standardized for size, position, and color. Training the model on a specific corpus — such as manuscripts in a particular script type or a particular hand — produces a set of ideal letterforms of the given corpus, resembling the abstracted alphabets used for palaeographical analysis.
+
 ## Run the analysis on our dataset and reproduce the paper's Results
 
-### 🔤 Graphic Profile Identification and Analysis (Section 7.1) 
+### Graphic Profile Identification and Analysis (Section 7.1) 
 [PCA.ipynb](https://github.com/malamatenia/hand-variability-analysis/blob/8eadfdb4b95a999561a8626d5d7c9add724976ba/notebooks/PCA.ipynb) # PCA analysis for Graphic Profiles
-### 📈 Statistical Analysis (Section 7.2) 
+### 📊 Statistical Analysis (Section 7.2) 
 [statistical_analysis.ipynb]([https://github.com/malamatenia/hand-variability-analysis/blob/inference.ipynb](https://github.com/malamatenia/hand-variability-analysis/blob/8eadfdb4b95a999561a8626d5d7c9add724976ba/notebooks/statistical_analysis.ipynb)). 
 
 ## Cite us
