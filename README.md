@@ -1,4 +1,4 @@
-# <p align="center">Interpretable Deep Learning for Palaeographic Variability Analysis; revisiting the scribal hands of Charles V’ Grandes Chroniques de France (Paris, BnF, fr., 2813)</p> <p align="center"> !add webpage link here! </p> <sub> [Malamatenia Vlachou Efstathiou](https://malamatenia.github.io/)</sub> </p>
+# <p align="center">Interpretable Deep Learning for Palaeographic Variability Analysis; revisiting the scribal hands of Charles V’ Grandes Chroniques de France (Paris, BnF, fr., 2813)</p> <p align="center"> !add webpage link here! </p> <p align="center"> <sub> [Malamatenia Vlachou Efstathiou](https://malamatenia.github.io/)</sub> </p>
 
 ![a_PCA_methodo.png](./.media/a_PCA_methodo.png)
 
