@@ -54,7 +54,7 @@ Character prototypes are generated using the [Learnable Typewriter](https://lear
 ### Graphic Profile Identification and Analysis (Section 7.1) 
 [PCA.ipynb](https://github.com/malamatenia/hand-variability-analysis/blob/8eadfdb4b95a999561a8626d5d7c9add724976ba/notebooks/PCA.ipynb). PCA analysis for Graphic Profile Identification and Characterization. 
 ### 📊 Statistical Analysis (Section 7.2) 
-[statistical_analysis.ipynb]([https://github.com/malamatenia/hand-variability-analysis/blob/inference.ipynb](https://github.com/malamatenia/hand-variability-analysis/blob/8eadfdb4b95a999561a8626d5d7c9add724976ba/notebooks/statistical_analysis.ipynb). Statistical analyses on abbreviative profiles and line management strategies.
+[statistical_analysis.ipynb](https://github.com/malamatenia/hand-variability-analysis/blob/8eadfdb4b95a999561a8626d5d7c9add724976ba/notebooks/statistical_analysis.ipynb). Statistical analyses on abbreviative profiles and line management strategies.
 
 ## Cite us
 
