@@ -51,10 +51,85 @@ Character prototypes are generated using the [Learnable Typewriter](https://lear
 
 ## Run the analysis on our dataset and reproduce the paper's Results
 
+## Setup Instructions
+
+<details>
+
+Before executing the Jupyter notebooks, you need to ensure the following dependencies are installed on your system.
+
+    <summary>1. System Requirements</summary>
+
+Make sure you have the following installed:
+
+- git
+- python (Make sure it's at least version 3.x)
+- pip (for installations)
+- venv (for creating virtual environments)
+- LaTeX style (for rendering figures and plots in a LaTeX-style)
+
+LaTeX Installation:
+
+If you're on **Linux**, install the necessary LaTeX packages with the following commands:
+
+```bash
+sudo apt update
+sudo apt install texlive-latex-base dvipng cm-super
+sudo apt install texlive-fonts-extra
+```
+
+For Windows, you can install MiKTeX by downloading it from [here](https://miktex.org/download), and make sure to enable the option “Install missing packages on-the-fly” during the installation process.
+
+    <summary>2. Clone the Repository</summary>
+    
+```bash
+git clone <palaeographic-variability-analysis-chroniques-fr-2813>
+cd <palaeographic-variability-analysis-chroniques-fr-2813>
+```
+
+    <summary>3. Set Up Your Virtual Environment</summary>
+    
+If using venv: 
+    
+```bash
+python -m venv <env-name>
+source <env-name>/bin/activate (on Linux)
+<env-name>\Scripts\activate (on Windows)
+```
+
+If using conda: 
+
+```bash
+conda create --name your_env_name python=3.x
+conda activate your_env_name
+```
+
+    <summary>4. Install Required Python Packages</summary>
+    
+```bash
+pip install -r requirements.txt
+```
+
+    <summary>5. Set Up Jupyter Kernel</summary>
+
+```bash
+python -m ipykernel install --user --name=your_env_name --display-name "Python (your_env_name)"
+```
+
+    <summary>6. Launch Jupyter Notebook</summary>
+  
+```bash
+jupyter notebook
+```
+
+</details>
+
+##  Run the Notebooks
+
 ### Graphic Profile Identification and Analysis (Section 7.1) 
 [PCA.ipynb](https://github.com/malamatenia/hand-variability-analysis/blob/8eadfdb4b95a999561a8626d5d7c9add724976ba/notebooks/PCA.ipynb). PCA analysis for Graphic Profile Identification and Characterization. 
 ### 📊 Statistical Analysis (Section 7.2) 
 [statistical_analysis.ipynb](https://github.com/malamatenia/hand-variability-analysis/blob/8eadfdb4b95a999561a8626d5d7c9add724976ba/notebooks/statistical_analysis.ipynb). Statistical analyses on abbreviative profiles and line management strategies.
+
 
 ## Cite us
 
