@@ -1,0 +1,9 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: Vlachou Efstathiou
+  given-names: Malamatenia
+orcid: https://orcid.org/0000-0002-9397-356X
+title:malamatenia/palaeographic-variability-analysis-grandes-chroniques-fr-2813: v1.1.0
+version: v1.1.0
+date-released: 2025-05-01
