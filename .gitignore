@@ -1,0 +1,7 @@
+# Ignore folders
+__pycache__/
+.vscode/
+results/prototypes/selected/
+results/prototypes/filtered/
+results/prototypes/cropped/
+results/prototypes/flagged/
