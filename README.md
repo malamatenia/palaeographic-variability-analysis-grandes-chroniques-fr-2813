@@ -28,7 +28,7 @@ root/
 │   ├── metadata_btv1b84472995.csv
 ```
 
-- In the ```scripts``` folder, we include the notebooks and utils
+- In the ```scripts``` folder, we include the notebooks and utils for the analysis
 ```
 ├── notebooks/
 │   ├── utils/           # folder contains functions for the notebooks
@@ -41,26 +41,34 @@ root/
 
 ```
 ├── prototypes/                # Letter prototypes
-│   ├── <folio_ID>/
-│   ├── <btv1b84472995_f1>/    # Folders for each page, containing prototypes for letters a-z
-│   ├── <btv1b84472995_f2>/
+│   ├── cropped/
+│   ├── filtered/
+│   ├── finetuned/
 │              ...
 │   ├── transcribe.json        # Mapping between characters and their indices
 │   ├── prototypes_paper_grid.jpeg # Overview of the prototypes 
 ```
 
 ### Prototype Generation: 
+Character prototypes are generated using the [Learnable Typewriter](https://learnable-typewriter.github.io/) approach. The Learnable Typewriter is a deep instance segmentation model designed to reconstruct text lines by learning the dictionary of visual patterns that make it up. Given an input image of a text line, the model’s task is to reconstruct the input image, by compositing the learned character prototypes onto a simple background. Each prototype is a grayscale image can be thought of as the optimized average shape of all occurrences of a character in the training data, standardized for size, position, and color. Training the model on a specific corpus — such as manuscripts in a particular script type or a particular hand — produces a set of ideal letterforms of the given corpus, resembling the abstracted alphabets used for palaeographical analysis. It has been adapted to handle medieval handwriting and prototype comparison in the [Learnable Handwriter](https://learnable-handwriter.github.io/) version. If you want to learn more about the prototype generation and train the Learnable Handwriter on your data, please refer to the project github: https://github.com/malamatenia/learnable-handwriter.
 
-Character prototypes are generated using the [Learnable Typewriter](https://learnable-typewriter.github.io/) approach. The Learnable Typewriter is a deep instance segmentation model designed to reconstruct text lines by learning the dictionary of visual patterns that make it up. Given an input image of a text line, the model’s task is to reconstruct the input image, by compositing the learned character prototypes onto a simple background. Each prototype is a grayscale image can be thought of as the optimized average shape of all occurrences of a character in the training data, standardized for size, position, and color. Training the model on a specific corpus — such as manuscripts in a particular script type or a particular hand — produces a set of ideal letterforms of the given corpus, resembling the abstracted alphabets used for palaeographical analysis. It has been adapted to handle medieval handwriting and prototype comparison in the [Learnable Handwriter](https://learnable-handwriter.github.io/) version. If you want to train the Learnable Handwriter on your data, please refer to the project github: https://github.com/malamatenia/learnable-handwriter 
+- as well as the results of the notebooks
+```
+├── graphic_profiles_pca/   
+├── statistical anlaysis/                
 
+```
 
-### Run the analysis on our dataset and reproduce the paper's Results
+### Run the analysis on our dataset and reproduce the paper's results
 
-We provide standalone in Collab notebooks for the reproduction of our results after obtaining the prototypes from the Learnable Handwriter. (add links)
+You can either clone the repository or run directly the notebooks in Google Colab using the following links:
 
+- [filter_sprites.ipynb](https://colab.research.google.com/github/malamatenia/palaeographic-variability-analysis-grandes-chroniques-fr-2813/blob/d389dc6486798948c44674233b114d5cfb1eeead/scripts/filter_sprites.ipynb)
+- [pca.ipynb](https://colab.research.google.com/github/malamatenia/palaeographic-variability-analysis-grandes-chroniques-fr-2813/blob/d389dc6486798948c44674233b114d5cfb1eeead/scripts/pca.ipynb)
+- [statistical_analysis.ipynb](https://colab.research.google.com/github/malamatenia/palaeographic-variability-analysis-grandes-chroniques-fr-2813/blob/d389dc6486798948c44674233b114d5cfb1eeead/scripts/statistical_analysis.ipynb)
 </details>
 
-### Cite us (soon)
+### Cite us (article tba soon)
 
 ```bibtex
 @misc{vlachou2025variability,
