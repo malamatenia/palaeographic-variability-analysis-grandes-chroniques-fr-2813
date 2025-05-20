@@ -213,17 +213,33 @@ def load_concatenated_images(prototype_folder, characters_ranges):
     
     return np.array(included_data), included_labels, image_shape
 
-## 0b.Helper Functions: Handling Metadata and Labels 🏷️
-
 
 # Create label mapping
-def create_label_mapping(labels, annotation_json_path):
+def create_label_mapping(labels, annotation_json_path, save_unknowns_path=None):
     label_mapping = {}
+    unknown_labels = []
+
+    # Load metadata mapping once
+    folio_mapping, _ = create_metadata_mapping(annotation_json_path)
+
     for label in labels:
-        folio_mapping, _ = create_metadata_mapping(annotation_json_path)
         mapped_label = folio_mapping.get(label, 'Unknown')
-        combined_label = f'{mapped_label}'
-        label_mapping[label] = combined_label
+        label_mapping[label] = mapped_label
+        if mapped_label == 'Unknown':
+            unknown_labels.append(label)
+
+    # Log the unknowns
+    if unknown_labels:
+        print(f"[create_label_mapping] Found {len(unknown_labels)} labels mapped to 'Unknown':")
+        for ul in unknown_labels:
+            print(f"  - {ul}")
+
+        if save_unknowns_path:
+            with open(save_unknowns_path, 'w') as f:
+                for ul in unknown_labels:
+                    f.write(f"{ul}\n")
+            print(f"[create_label_mapping] Unknown labels saved to: {save_unknowns_path}")
+
     return label_mapping
 
 
@@ -403,6 +419,7 @@ def pca_analysis(characters, mode, prototype_folder, annotation_json_path, resul
 
     else:
         raise ValueError("Mode must be either 'all' or 'separate'.")
+
 
 def plot_pca_scatter(pca_result, included_labels, mapping, images, image_shape, save_path, components=(0, 1), outliers=False, protos=False, annotation_json_path=None, principal_components=None):
 

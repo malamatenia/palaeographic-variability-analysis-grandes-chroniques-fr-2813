@@ -1,0 +1,109 @@
+training:
+  num_epochs: 300
+  max_iteration: 637000
+  batch_size: 16
+  adaptive_dataloader: false
+  n_workers: 8
+  optimizer:
+    name: adam
+    lr: 0.0001
+    weight_decay: 0
+    encoder:
+      weight_decay: 1.0e-06
+    finetune: g_theta
+  log:
+    milestone: 10
+    save:
+      every: 1
+      best: true
+    train:
+      reconstruction:
+        every: 1
+      images:
+        every: 1
+        how_many: 20
+    val:
+      reconstruction:
+        every: 1
+      error_rate:
+        every: 1
+        last: true
+        kargs:
+          dataloader_batch_size: 4
+  device: '0'
+  seed: 97312
+  flush_mem: true
+  flush_per: 1
+  log_every:
+    milestone: 1
+model:
+  encoder:
+    H: 96
+    C: 3
+    name: resnet32
+    pooling_on_width: 4
+  background:
+    size:
+    - ${eval:${model.encoder.H}//2}
+    - ${model.encoder.H}
+    use_clamp: soft
+    init:
+      freeze: true
+      constant:
+      - 0.5
+      - 0.5
+      - 0.5
+  sprites:
+    'n': 77
+    color_channels: ${model.encoder.C}
+    size:
+    - ${eval:${model.encoder.H}//2}
+    - ${eval:${model.encoder.H}//2}
+    use_clamp: soft
+    gen_type: mlp
+    init:
+      color:
+        freeze: true
+        constant: 0.5
+  transformation:
+    canvas_size:
+    - ${model.encoder.H}
+    - ${eval:${model.encoder.H}*2}
+    layer:
+      ops:
+      - color
+      - position
+      color:
+        color_channels: ${model.encoder.C}
+        n_hidden_layers: 2
+        n_hidden_units: 128
+      position:
+        n_hidden_layers: 2
+        n_hidden_units: 128
+        max_x: 1.0
+        max_y: 1.0
+        parametrization: exp
+        padding_mode: zeros
+    background:
+      ops:
+      - color
+      color:
+        color_channels: ${model.encoder.C}
+        n_hidden_layers: 2
+        n_hidden_units: 128
+  window:
+    size: ${model.encoder.H}
+  loss:
+    sigma_gaussian: 7
+    ctc_factor: 0.0
+dataset:
+  btv1b84472995:
+    path: btv1b84472995/
+    sep: ''
+    space: ' '
+    p: 0
+    supervised: true
+tag: btv1b84472995-0.01-4
+timestamp: 2024-11-20_14-59-21
+run_dir: runs/btv1b84472995/btv1b84472995-0.01-4/2024-11-20_14-59-21/
+eval: true
