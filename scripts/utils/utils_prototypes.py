@@ -2,9 +2,11 @@ import os
 import numpy as np
 import pandas as pd
 import shutil
+import re
 from pathlib import Path
 import matplotlib.pyplot as plt
 from PIL import Image, ImageOps
+from IPython.display import display
 from scipy.ndimage import binary_dilation, gaussian_filter, label
 
 def parse_index_ranges(range_str):
@@ -109,6 +111,7 @@ def crop_it(input_dir, output_dir,
 def filter_it(input_dir, output_dir, reference_dir, index_range=None, threshold_ratio=None):
     """
     Filters a batch of image folders by applying masks derived from a reference folder.
+    Overwrites existing files in the output directory if they already exist.
 
     Parameters:
     - input_dir (str): Path to folders containing input images.
@@ -117,6 +120,11 @@ def filter_it(input_dir, output_dir, reference_dir, index_range=None, threshold_
     - index_range (range or None): Index range of image filenames to process. If None, process all PNGs.
     - threshold_ratio (float): Threshold ratio for binary mask creation.
     """
+    import os
+    import numpy as np
+    from PIL import Image
+    from scipy.ndimage import binary_dilation, label, gaussian_filter
+    
     for folder in os.listdir(input_dir):
         if folder.startswith('.') or folder == 'baseline':
             continue  # Skip hidden/system folders and the reference folder itself
@@ -124,7 +132,8 @@ def filter_it(input_dir, output_dir, reference_dir, index_range=None, threshold_
         folder_input = os.path.join(input_dir, folder)
         folder_output = os.path.join(output_dir, folder)
 
-        os.makedirs(folder_output)
+        # Create output directory if it doesn't exist (instead of failing if it exists)
+        os.makedirs(folder_output, exist_ok=True)
 
         images = []
         masks_ref = []
@@ -174,7 +183,11 @@ def filter_it(input_dir, output_dir, reference_dir, index_range=None, threshold_
             img_array = np.array(image)
             filtered_image = 255 - mask + img_array * (mask / 255)
             filtered_image = Image.fromarray(filtered_image.astype(np.uint8))
-            filtered_image.save(os.path.join(folder_output, filename))
+            
+            # Will overwrite if the file already exists
+            output_path = os.path.join(folder_output, filename)
+            filtered_image.save(output_path)
+            print(f"Saved filtered image to: {output_path}")
 
 
 
@@ -188,22 +201,30 @@ def flag_it(input_dir, output_dir, reference_dir,
     Parameters:
     - input_dir (Path or str): Folder containing input folders with grayscale images.
     - output_dir (Path or str): Folder where output images (with borders and diagnostics) are saved.
-    - reference_dir (Path or str): Folder containing reference masks.
-    - index_range (range): Range of image indices to process.
-    - default_threshold_ratio (float): Threshold for binarizing reference masks.
-    - sup_threshold_ratio (float): Threshold for binarizing input images for "sup" masks.
+    - reference_dir (Path or str): Folder containing reference masks (directly, not in subfolders).
+    - index_range (range or list): Range or list of image indices to process.
+    - default_threshold_ratio (float): Threshold ratio for binarizing reference masks.
+    - sup_threshold_ratio (float): Threshold ratio for binarizing input images for "sup" masks.
     - orange_threshold (tuple): (min, max) range to assign orange border.
     - red_threshold (float): Minimum difference to assign red border.
 
     Returns:
     - pd.DataFrame: DataFrame with folder names, image indices, and difference scores.
     """
+    from pathlib import Path
+    import numpy as np
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    from PIL import Image, ImageOps
+    from scipy.ndimage import binary_dilation, label, gaussian_filter
+    
     input_dir = Path(input_dir)
     output_dir = Path(output_dir)
     reference_dir = Path(reference_dir)
 
     default_threshold = default_threshold_ratio * 255
     sup_threshold = sup_threshold_ratio * 255
+
     difference_data = []
 
     for folder in input_dir.iterdir():
@@ -213,16 +234,22 @@ def flag_it(input_dir, output_dir, reference_dir,
         folder_output = output_dir / folder.name
         folder_output.mkdir(parents=True, exist_ok=True)
 
+        # Determine filenames to process
         if index_range is None:
-            filenames = sorted([f.name for f in folder.glob("*.png") if f.suffix.lower() == '.png'])
+            filenames = sorted([f.name for f in folder.glob("*.png")])
         else:
             filenames = [f"{i}.png" for i in index_range]
 
         for filename in filenames:
+            i = Path(filename).stem
             image_path = folder / filename
-            mask_path = reference_dir / folder.name / filename  # Assumes per-folder baseline structure
+            
+            # *** Key change: The mask is now directly in reference_dir, not in a subfolder ***
+            mask_path = reference_dir / filename
 
             if not image_path.exists() or not mask_path.exists():
+                print(f"Looking for image at: {image_path}")
+                print(f"Looking for mask at: {mask_path}")
                 print(f"Missing image or mask: {filename} in folder {folder.name} — skipping.")
                 continue
 
@@ -232,8 +259,9 @@ def flag_it(input_dir, output_dir, reference_dir,
             img_array = np.array(image)
             mask_array = np.array(mask)
 
-            # Reference mask
+            # Process reference mask
             binary_mask_ref = np.where(mask_array < default_threshold, 255, 0).astype(np.uint8)
+
             dilated_mask_ref = binary_mask_ref
             for _ in range(2):
                 dilated_mask_ref = binary_dilation(dilated_mask_ref)
@@ -247,8 +275,7 @@ def flag_it(input_dir, output_dir, reference_dir,
 
             convolved_mask_ref = gaussian_filter(largest_mask_ref, sigma=1)
 
-            # Sup mask
-            img_array = np.array(images[idx])
+            # Process sup mask from input image
             binary_mask_sup = np.where(img_array < sup_threshold, 255, 0).astype(np.uint8)
             labeled_sup, n_sup = label(binary_mask_sup)
             if n_sup > 0:
@@ -257,15 +284,15 @@ def flag_it(input_dir, output_dir, reference_dir,
             else:
                 largest_mask_sup = binary_mask_sup
 
-            # Filtered image
+            # Create filtered image based on reference mask
             filtered_ref = 255 - convolved_mask_ref + img_array * (convolved_mask_ref / 255)
             filtered_ref = np.clip(filtered_ref, 0, 255).astype(np.uint8)
             filtered_ref_img = Image.fromarray(filtered_ref).convert("RGB")
 
-            # Difference score
+            # Calculate difference score
             difference = (np.sum(largest_mask_sup * (255. - convolved_mask_ref)) / 255.) / 255
 
-            # Border color
+            # Determine border color
             if orange_threshold[0] <= difference <= orange_threshold[1]:
                 border_color = 'orange'
             elif difference > red_threshold:
@@ -273,7 +300,7 @@ def flag_it(input_dir, output_dir, reference_dir,
             else:
                 border_color = 'white'
 
-            # Save image with border
+            # Add border and save
             filtered_with_border = ImageOps.expand(filtered_ref_img, border=2, fill=border_color)
             filtered_with_border.save(folder_output / f"{i}.png")
 
@@ -301,3 +328,122 @@ def flag_it(input_dir, output_dir, reference_dir,
             difference_data.append({'Folder': folder.name, 'Image': i, 'Difference': difference})
 
     return pd.DataFrame(difference_data)
+
+def make_prototype_grid(
+    folder_paths,
+    output_path=None,
+    margin=2,
+    show=True
+):
+    """
+    Creates and optionally displays a grid of prototype images arranged by folder and image IDs.
+    Only collects images with integer filenames (e.g., "26.png", "49.png").
+    Sorts folder names by numeric part after '_f' (handles suffix letters),
+    and normalizes '_f960' to '_f96' before sorting.
+
+    Args:
+        folder_paths (str or Path): Root directory where all folder subpaths exist.
+        output_path (str or Path, optional): Where to save the final grid. If None, does not save.
+        margin (int): Pixel space between images.
+        show (bool): If True, display the final grid in Jupyter.
+    """
+    import re
+    from pathlib import Path
+    from PIL import Image
+    from IPython.display import display
+    
+    folder_paths = Path(folder_paths)
+    folders = [f.name for f in folder_paths.iterdir() if f.is_dir()]
+
+    # Adjust folder names for sorting (internally rename '_f960' -> '_f96')
+    def sort_key(folder_name):
+        # Replace '_f960' with '_f96'
+        adjusted = folder_name.replace('_f960', '_f96')
+
+        # Extract numeric part after '_f' (and optional letter)
+        # e.g. btv1b84472995_f57a -> 57, 'a'
+        match = re.search(r'_f(\d+)([a-z]?)$', adjusted)
+        if match:
+            number = int(match.group(1))
+            letter = match.group(2)
+            # letter to ASCII for secondary sorting, empty letter comes first
+            letter_val = ord(letter) if letter else 0
+            return (number, letter_val)
+        else:
+            # fallback: put it at the end
+            return (9999, 0)
+
+    folders.sort(key=sort_key)
+
+    print("Sorted folders:", folders)
+
+    # Automatically get all image ids from first folder (assuming consistent naming)
+    # MODIFIED: Only select filenames that are strictly integers
+    first_folder = folder_paths / folders[0]
+    all_png_files = first_folder.glob("*.png")
+    
+    # Filter to keep only filenames that are strictly integers
+    image_ids = []
+    for png_file in all_png_files:
+        stem = png_file.stem
+        if stem.isdigit():  # Check if the stem contains only digits
+            image_ids.append(stem)
+    
+    # Sort numerically (not alphabetically)
+    image_ids = sorted(image_ids, key=int)
+    
+    print(f"Found {len(image_ids)} integer-named images in {folders[0]}")
+
+    def horzpil(images, width, height, margin=2):
+        images = [Image.open(image_path) for image_path in images]
+        total_width = width * len(images) + margin * (len(images) - 1)
+        new_im = Image.new('RGB', (total_width, height), color=(255, 255, 255))
+
+        x_offset = 0
+        for img in images:
+            new_im.paste(img, (x_offset, 0))
+            x_offset += width + margin
+        return new_im
+
+    # Read one image to determine dimensions
+    if not image_ids:
+        print("No integer-named images found.")
+        return
+        
+    sample_img_path = folder_paths / folders[0] / f"{image_ids[0]}.png"
+    sample_img = Image.open(sample_img_path)
+    img_w, img_h = sample_img.size
+
+    grid_images = []
+    for folder_name in folders:
+        row_images = []
+        folder_dir = folder_paths / folder_name
+        for img_id in image_ids:
+            img_path = folder_dir / f"{img_id}.png"
+            if img_path.exists():
+                row_images.append(img_path)
+        if row_images:
+            grid_row = horzpil(row_images, img_w, img_h, margin)
+            grid_images.append(grid_row)
+
+    if not grid_images:
+        print("No images found.")
+        return
+
+    # Combine rows vertically
+    total_height = sum(img.height for img in grid_images)
+    final_img = Image.new('RGB', (grid_images[0].width, total_height), color=(255, 255, 255))
+
+    y_offset = 0
+    for row in grid_images:
+        final_img.paste(row, (0, y_offset))
+        y_offset += row.height
+
+    if output_path:
+        final_img.save(output_path)
+        print(f"Grid image saved to: {output_path}")
+
+    if show:
+        display(final_img)
+
+    #return final_img
