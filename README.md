@@ -10,22 +10,12 @@ This study introduces an interpretable scribal hand characterization and variabi
 
 ### Repository Structure
 
-- In the ```data``` folder, the data is available in two forms, ground truth (images + XML ALTO files) and the processed dataset for our experiment. Data are also available also on Zenodo: [DOI:10.5281/zenodo.15282371](https://doi.org/10.5281/zenodo.15282371)
+- In the ```data``` folder, the data is available in two forms, ground truth (images + XML ALTO files) and the processed dataset for our experiment. Data are available also on Zenodo: [DOI:10.5281/zenodo.15282371](https://doi.org/10.5281/zenodo.15282371)
 
 ```
-root/
-├── data/                      # Ground Truth (GT) from selected folios of the Paris, BnF, fr. 2813 
-│   ├── annotations/           # ALTO XML files with graphemic transcription and layout tagging (SegmOnto)
-│   └── images/                # Gallica Images ©BnF
-│
-├── dataset/                   # The dataset created for our analysis
-│   ├── annotation.json        # Annotations and metadata
-│   ├── images/                # Extracted lines from the GT, organized per page folder
-│       ├── <folio_ID>/
-│       ├── <btv1b84472995_f1>
-│       ├── <btv1b84472995_f2>/
-│                ...             
-│   ├── metadata_btv1b84472995.csv
+├── data/                      
+│   ├── raw_ground_truth/      # Ground Truth (GT) from selected folios of the Paris, BnF, fr. 2813: Images + ALTO XML files with graphemic transcription and layout tagging (SegmOnto)
+│   └── processed_dataset/      # Dataset curated for our analysis using the Learnable Handwriter
 ```
 
 - In the ```scripts``` folder, we include the notebooks and utils for the analysis
