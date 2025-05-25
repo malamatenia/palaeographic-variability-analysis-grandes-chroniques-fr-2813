@@ -194,7 +194,8 @@ def filter_it(input_dir, output_dir, reference_dir, index_range=None, threshold_
 def flag_it(input_dir, output_dir, reference_dir,
             index_range=None,
             default_threshold_ratio=None, sup_threshold_ratio=None,
-            orange_threshold=None, red_threshold=None):
+            orange_threshold=None, red_threshold=None,
+            show_plots=False): 
     """
     Flags differences between reference masks and input images by applying visual borders and diagnostics.
 
@@ -207,16 +208,11 @@ def flag_it(input_dir, output_dir, reference_dir,
     - sup_threshold_ratio (float): Threshold ratio for binarizing input images for "sup" masks.
     - orange_threshold (tuple): (min, max) range to assign orange border.
     - red_threshold (float): Minimum difference to assign red border.
+    - show_plots (bool): If True, display diagnostic plots in Jupyter.
 
     Returns:
     - pd.DataFrame: DataFrame with folder names, image indices, and difference scores.
     """
-    from pathlib import Path
-    import numpy as np
-    import pandas as pd
-    import matplotlib.pyplot as plt
-    from PIL import Image, ImageOps
-    from scipy.ndimage import binary_dilation, label, gaussian_filter
     
     input_dir = Path(input_dir)
     output_dir = Path(output_dir)
@@ -322,8 +318,12 @@ def flag_it(input_dir, output_dir, reference_dir,
             for ax in axes:
                 ax.axis('off')
 
-            fig.savefig(folder_output / f"difference_map_{i}.png", bbox_inches='tight')
-            plt.close(fig)
+            if show_plots:
+                plt.tight_layout()
+                plt.show()
+            else:
+                fig.savefig(folder_output / f"difference_map_{i}.png", bbox_inches='tight')
+                plt.close(fig)
 
             difference_data.append({'Folder': folder.name, 'Image': i, 'Difference': difference})
 
