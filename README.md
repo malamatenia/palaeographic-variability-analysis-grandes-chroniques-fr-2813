@@ -53,9 +53,9 @@ Character prototypes are generated using the [Learnable Typewriter](https://lear
 
 You can either clone the repository or run directly the notebooks in Google Colab using the following links:
 
-- [filter_sprites.ipynb](https://colab.research.google.com/github/malamatenia/palaeographic-variability-analysis-grandes-chroniques-fr-2813/blob/d389dc6486798948c44674233b114d5cfb1eeead/scripts/filter_sprites.ipynb)
-- [pca.ipynb](https://colab.research.google.com/github/malamatenia/palaeographic-variability-analysis-grandes-chroniques-fr-2813/blob/d389dc6486798948c44674233b114d5cfb1eeead/scripts/pca.ipynb)
-- [statistical_analysis.ipynb](https://colab.research.google.com/github/malamatenia/palaeographic-variability-analysis-grandes-chroniques-fr-2813/blob/d389dc6486798948c44674233b114d5cfb1eeead/scripts/statistical_analysis.ipynb)
+- filter_prototypes.ipynb[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/malamatenia/palaeographic-variability-analysis-grandes-chroniques-fr-2813/blob/a0ca27a7a03f2474849d0e893f1c13c10de8d907/scripts/filter_prototypes.ipynb)
+- pca.ipynb[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/malamatenia/palaeographic-variability-analysis-grandes-chroniques-fr-2813/blob/d389dc6486798948c44674233b114d5cfb1eeead/scripts/pca.ipynb)
+- statistical_analysis.ipynb[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/malamatenia/palaeographic-variability-analysis-grandes-chroniques-fr-2813/blob/a0ca27a7a03f2474849d0e893f1c13c10de8d907/scripts/statistical_analysis.ipynb)
 </details>
 
 ### Cite us (article tba soon)
