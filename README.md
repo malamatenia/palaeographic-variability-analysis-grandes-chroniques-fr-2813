@@ -44,7 +44,8 @@ Character prototypes are generated using the [Learnable Typewriter](https://lear
 
 - as well as the results of the notebooks
 ```
-├── graphic_profiles_pca/   
+├── graphic_profiles_pca/
+├── prototypes/
 ├── statistical anlaysis/                
 
 ```
