@@ -283,6 +283,20 @@ p {
     height: auto;
 }
 
+/* Flex container for vertically stacked images */
+.stack-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.stack-vertical img {
+    max-width: 60%;
+    height: auto;
+}
+
 /* Style for clickable images */
 .clickable-image img {
     max-width: 100%;

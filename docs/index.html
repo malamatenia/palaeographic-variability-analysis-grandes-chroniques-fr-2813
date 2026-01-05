@@ -7,7 +7,7 @@
 
 <head>
     <!--Idea stolen from OSV-5M -->
-    <title>LTW-Pal</title> <!--add title-->
+    <title>Variability Analysis</title> <!--add title-->
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
@@ -15,18 +15,18 @@
       src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/png" href="images/open-book.png">
+    <link rel="icon" type="image/png" href="images/open-a.png">
 </head>
 
 <body>
     <div class="container"                    
     style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
 
-        <h1>Interpretable Deep Learning for Palaeographic Variability
-            Analysis;<br> revisiting the scribal hands of Charles V’ Grandes
+        <h1 style="text-align: center;">Interpretable Deep Learning for Palaeographic Variability
+            Analysis;<br> revisiting the scribal hands of Charles V' Grandes
             Chroniques de France (Paris, BnF, fr., 2813) <br>
             <div class="iwcp"                    
-            style="display: flex; justify-content: center;"> Scriptorium journal (forthcoming)</h1>
+            style="display: flex; justify-content: center;"> Scriptorium journal (forthcoming)</div></h1>
         <div class="authors">
             <p style="font-size: 18px;">
                 <a href="https://malamatenia.github.io">Malamatenia Vlachou Efstathiou</a><sup>1,2</sup> &nbsp;
@@ -88,6 +88,17 @@
             <div class="para">
                 <p>The manuscript Paris, BnF, fr. 2813 presents a striking contrast between the two royal scribes: while Henri de Trévou's hand (f. 1r–385v) demonstrates remarkable stability and uniformity, Raoulet d'Orléans' section (f. 386r onwards) exhibits significant internal variability. Scholars such as Wolfgang Oeser and Monica Peretto have documented Raoulet's oscillation between Quadratus and Rotundus features, his alternation of different allographs of the letter ‹a›, and observable shifts in script execution—from the regular, carefully executed hand at f. 386r to increasingly hastier and compressed writing toward the end of the manuscript. Yet this variability has been primarily noted rather than systematically analyzed or explained.</p>
                 <p>Anne Hedeman's meticulous codicological analysis provides crucial context by reconstructing the distinct phases of the manuscript's production: Raoulet's work was executed in two separate stages (1375–1377 and after 1378), with different textual continuations, specific modifications, and varying production conditions. Her work reveals how Raoulet's dynamic role—copying newly commissioned material, performing targeted substitutions, and working under changing circumstances—differs fundamentally from Henri's more straightforward task of transcribing the established tradition. This codicological framework invites further exploration of the relationship between production circumstances and the observed graphic variability, suggesting that Raoulet's fluctuation may be meaningful rather than merely irregular.</p>
+            </div>
+            <div class="stack-vertival">
+                <img src="images/GCF_Henri.png" alt="Henri-hand-example"> 
+                <p><b>Figure 2a: </b> Examples of Henri’s handwriting and overall aspect throughout the manuscript (a-c: f. 25r, 162r, 297r)
+                    and characteristic end of gathering catchphrases (e-h: f. 113v, 121v, 217v, 381v) in the shape of a flourished box
+                    (bottom), very consistent throughout f. 1-385v, and of a nota sign (d)60.  Source: BnF.</p>
+                <img src="images/GCF_Raoulet.png" alt="Raoulet-hand example">
+                 <p><b>Figure 2b:</b> Samples from the different distinct moments of Raoulet’s hand according to Monica Peretto (a-
+                    c: f. 386r, 481r and 490v) and the characteristic catchwords (d-f: f. 389v, 416v and 448v) and nota signs (g-
+                    i: f. 400r, 469v, 483r) of Raoulet, circumscribed with flourished « u-shaped » form.
+                    Source: BnF.</p>
             </div>
             <div class="para">
                 <p> <b>Dataset:</b> The analysis is based on 68 double-column pages evenly spaced throughout the manuscript, selected to ensure broad coverage and to target folios of palaeographic and codicological significance, including different production phases and previously documented shifts in handwriting. The dataset comprises 24 pages attributed to Henri de Trévou and 44 pages attributed to Raoulet d'Orléans, totaling approximately 6,600 lines of text. Each page was transcribed following a graphemic approach, with extracted text line images linked to their transcriptions. All associated data are openly available via Zenodo: <a href="https://doi.org/10.5281/zenodo.15282371" target="_blank">doi: 10.5281/zenodo.15282371</a>.</p>
