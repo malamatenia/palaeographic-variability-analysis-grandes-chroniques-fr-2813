@@ -288,12 +288,32 @@ p {
 .side-by-side {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
+    gap: 20px;
 }
 
 .side-by-side img {
-    max-width: 40%;
+    max-width: 100%;
     height: auto;
+}
+
+.image-caption-pair {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    max-width: 45%;
+}
+
+.image-caption-pair img {
+    max-width: 100%;
+    height: auto;
+}
+
+.image-caption-pair p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.95rem;
 }
 
 /* Flex container for vertically stacked images */
