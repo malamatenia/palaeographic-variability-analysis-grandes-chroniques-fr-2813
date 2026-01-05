@@ -1,6 +1,6 @@
-# <p align="center"> Work In Progress <p/>
+# <p align="center"> Interpretable Deep Learning for Palaeographic Variability Analysis;<br> revisiting the scribal hands of Charles V' Grandes Chroniques de France (Paris, BnF, fr., 2813) <br> <p/>
 
-# <p align="center"> [![DOI](https://zenodo.org/badge/971354555.svg)](https://doi.org/10.5281/zenodo.15297707) </p> <p align="center"> !soon adding a webpage 🔗! </p> <p align="center"> <sub> [Malamatenia Vlachou Efstathiou](https://malamatenia.github.io/)</sub> </p>
+# <p align="center"> [![DOI](https://zenodo.org/badge/971354555.svg)](https://doi.org/10.5281/zenodo.15297707) </p> <p align="center">  🔗 [Project Webpage](https://malamatenia.github.io/palaeographic-variability-analysis-grandes-chroniques-fr-2813/) </p> <p align="center"> <sub> [Malamatenia Vlachou Efstathiou](https://malamatenia.github.io/)</sub> </p>
 
 ![a_PCA_methodo.png](./.media/a_PCA_methodo.png)
 
@@ -59,13 +59,16 @@ You can either clone the repository or run directly the notebooks in Google Cola
 - statistical_analysis.ipynb[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/malamatenia/palaeographic-variability-analysis-grandes-chroniques-fr-2813/blob/a0ca27a7a03f2474849d0e893f1c13c10de8d907/scripts/statistical_analysis.ipynb)
 </details>
 
-### Cite us (article tba soon)
+### Cite us (article forthcoming)
 
 ```bibtex
-@misc{vlachou2025variability,
-    title = {Interpretable Deep Learning for Palaeographic Variability Analysis; revisiting the scribal hands of Charles V’ Grandes Chroniques de France (Paris, BnF, fr., 2813)},
+@article{vlachou2025grandes-chroniques-fr-2813,
+ title = {Interpretable Deep Learning for Palaeographic Variability
+        Analysis; revisiting the scribal hands of Charles V' Grandes
+        Chroniques de France (Paris, BnF, fr., 2813)},
     author = {Vlachou-Efstathiou, Malamatenia},
-    year = {2025},
+    publisher = {Scriptorium (forthcoming)},
+    year = {2026},
 ```
 
 ### Acknowledgements
