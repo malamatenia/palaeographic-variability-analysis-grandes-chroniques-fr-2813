@@ -1,4 +1,4 @@
-# <p align="center"> Work In Progress <p/>
+# <p align="center"> Interpretable Deep Learning for Palaeographic Variability Analysis;<br> revisiting the scribal hands of Charles V' Grandes Chroniques de France (Paris, BnF, fr., 2813) <br> <p/>
 
 # <p align="center"> [![DOI](https://zenodo.org/badge/971354555.svg)](https://doi.org/10.5281/zenodo.15297707) </p> <p align="center">  🔗 [Project Webpage](https://malamatenia.github.io/palaeographic-variability-analysis-grandes-chroniques-fr-2813/) </p> <p align="center"> <sub> [Malamatenia Vlachou Efstathiou](https://malamatenia.github.io/)</sub> </p>
 
