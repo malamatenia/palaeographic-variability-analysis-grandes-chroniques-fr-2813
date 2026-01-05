@@ -26,7 +26,7 @@
             Analysis;<br> revisiting the scribal hands of Charles V' Grandes
             Chroniques de France (Paris, BnF, fr., 2813) <br>
             <div class="iwcp"                    
-            style="display: flex; justify-content: center;"> Scriptorium journal (forthcoming)</div></h1>
+            style="display: flex; justify-content: center;"> <i>Scriptorium</i> (forthcoming)</div></h1>
         <div class="authors">
             <p style="font-size: 18px;">
                 <a href="https://malamatenia.github.io">Malamatenia Vlachou Efstathiou</a><sup>1,2</sup> &nbsp;
@@ -77,32 +77,35 @@
         <div class="abstract" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
             <h2>Abstract</h2>
             <div class="para">
-                <p>This study introduces an interpretable scribal hand characterization and variability analysis based on a deep learning framework ​combining graphic tools with statistical analysis of scribal practices. Designed to bridge the gap between traditional palaeographic methods — based on qualitative observations — and automatic computational models, our approach enables interpretable character-level inter- and intra-scribal variation analysis and graphic profiling. We demonstrate our method on Charles V’s copy of the Grandes Chroniques de France (Paris, BnF, fr. 2813), revisiting the traditional attribution to two royal scribes of Charles’ V, Henri de Trévou and Raoulet d’Orléans. Through the definition and characterization of graphic profiles and complementary statistical analysis of abbreviation usage and space management, we offer a more systematic and context-aware understanding of scribal behavior in the manuscript. We hope that this work contributes to a methodological shift, where computational tools actively assist the palaeographer.
-                </p>
+                <p>This study introduces an interpretable scribal hand characterization and variability analysis based on a deep learning framework combining graphic tools with statistical analysis of scribal practices. Designed to bridge the gap between traditional palaeographic methods — based on qualitative observations — and automatic computational models, our approach enables interpretable character-level inter- and intra-scribal variation analysis and graphic profiling. We demonstrate our method on Charles V's copy of the Grandes Chroniques de France (Paris, BnF, fr. 2813), revisiting the traditional attribution to two royal scribes of Charles' V, Henri de Trévou and Raoulet d'Orléans. Through the definition and characterization of graphic profiles and complementary statistical analysis of abbreviation usage and space management, we offer a more systematic and context-aware understanding of scribal behavior in the manuscript.</p>
+            </div>
+        </div>
+
+        <div class="Method" style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+            <h2>Key Contributions</h2>
+            <div class="para">
+                <ul style="text-align: left; max-width: 700px;">
+                    <li>An interpretable deep learning framework for palaeographic variability analysis that combines visual character profiling with statistical analysis</li>
+                    <li>Systematic identification of four distinct graphic profiles in the manuscript, revealing meaningful patterns in scribal variation</li>
+                    <li>A case study demonstrating how computational tools can assist palaeographers in understanding scribal behavior and manuscript production</li>
+                </ul>
             </div>
         </div>
 
         <div class="Method"
         style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
             <h2>Case Study: Henri de Trévou and Raoulet d'Orléans</h2>
-            <div class="para">
-                <p>The manuscript Paris, BnF, fr. 2813 presents a striking contrast between the two royal scribes: while Henri de Trévou's hand (f. 1r–385v) demonstrates remarkable stability and uniformity, Raoulet d'Orléans' section (f. 386r onwards) exhibits significant internal variability. Scholars such as Wolfgang Oeser and Monica Peretto have documented Raoulet's oscillation between Quadratus and Rotundus features, his alternation of different allographs of the letter ‹a›, and observable shifts in script execution—from the regular, carefully executed hand at f. 386r to increasingly hastier and compressed writing toward the end of the manuscript. Yet this variability has been primarily noted rather than systematically analyzed or explained.</p>
-                <p>Anne Hedeman's meticulous codicological analysis provides crucial context by reconstructing the distinct phases of the manuscript's production: Raoulet's work was executed in two separate stages (1375–1377 and after 1378), with different textual continuations, specific modifications, and varying production conditions. Her work reveals how Raoulet's dynamic role—copying newly commissioned material, performing targeted substitutions, and working under changing circumstances—differs fundamentally from Henri's more straightforward task of transcribing the established tradition. This codicological framework invites further exploration of the relationship between production circumstances and the observed graphic variability, suggesting that Raoulet's fluctuation may be meaningful rather than merely irregular.</p>
-            </div>
+            
+            <p>The manuscript Paris, BnF, fr. 2813 presents a striking contrast: while Henri de Trévou's hand (f. 1r–385v) demonstrates remarkable stability, Raoulet d'Orléans' section (f. 386r onwards) exhibits significant internal variability. Previous scholarship has documented Raoulet's oscillation between different script styles and shifts in execution, yet this variability has been primarily noted rather than systematically analyzed. Our computational approach reveals four distinct graphic profiles and provides new insights into the relationship between production circumstances and scribal variation.</p>
+           
             <div class="stack-vertival">
                 <img src="images/GCF_Henri.png" alt="Henri-hand-example"> 
-                <p><b>Figure 2a: </b> Examples of Henri’s handwriting and overall aspect throughout the manuscript (a-c: f. 25r, 162r, 297r)
-                    and characteristic end of gathering catchphrases (e-h: f. 113v, 121v, 217v, 381v) in the shape of a flourished box
-                    (bottom), very consistent throughout f. 1-385v, and of a nota sign (d)60.  Source: BnF.</p>
+                <p><b>Figure 1a: </b> Examples of Henri's handwriting throughout the manuscript (a-c: f. 25r, 162r, 297r) and characteristic catchphrases (e-h). Source: BnF.</p>
                 <img src="images/GCF_Raoulet.png" alt="Raoulet-hand example">
-                 <p><b>Figure 2b:</b> Samples from the different distinct moments of Raoulet’s hand according to Monica Peretto (a-
-                    c: f. 386r, 481r and 490v) and the characteristic catchwords (d-f: f. 389v, 416v and 448v) and nota signs (g-
-                    i: f. 400r, 469v, 483r) of Raoulet, circumscribed with flourished « u-shaped » form.
-                    Source: BnF.</p>
+                <p><b>Figure 1b:</b> Samples from different moments of Raoulet's hand (a-c: f. 386r, 481r, 490v) and characteristic catchwords (d-f). Source: BnF.</p>
             </div>
-            <div class="para">
-                <p> <b>Dataset:</b> The analysis is based on 68 double-column pages evenly spaced throughout the manuscript, selected to ensure broad coverage and to target folios of palaeographic and codicological significance, including different production phases and previously documented shifts in handwriting. The dataset comprises 24 pages attributed to Henri de Trévou and 44 pages attributed to Raoulet d'Orléans, totaling approximately 6,600 lines of text. Each page was transcribed following a graphemic approach, with extracted text line images linked to their transcriptions. All associated data are openly available via Zenodo: <a href="https://doi.org/10.5281/zenodo.15282371" target="_blank">doi: 10.5281/zenodo.15282371</a>.</p>
-            </div>
+            
+            <p style="font-size: 0.95rem; color: #666;"><b>Dataset:</b> 68 pages (24 Henri, 44 Raoulet), ~6,600 lines of text. Data available via <a href="https://doi.org/10.5281/zenodo.15282371" target="_blank">Zenodo</a>.</p>
         </div>
 
         <div class="Method"
@@ -137,49 +140,28 @@
         </div>
         <div class="Method"
         style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
-        <p>A PCA plot is a two-dimensional scatter plot in which each prototype is positioned
-            according to its coordinates on the first two principal components, PC1 and PC2, creating a
-            map of the graphic landscape of the dataset, as illustrated in Section 7.1.2. For clarity, the
-            percentage of variance explained by each principal component, along with the variation
-            associated with the coordinates, is shown along each axis. Components that convey more
-            variance reflect more significant differences across the dataset. Points that cluster together
-            indicate similar expression profiles. To further facilitate visual interpretation we display the
-            prototype images at each position. Thus, this type of PCA analysis and its graphical
-            representation, instead of yielding binary attributions or fixed similarity scores, can assist the
-            palaeographer in mapping graphic variation, as well as objectively describe key morphological
-            differences.</p>    
-       
-               <h2>Graphic Profile Discovery and Analysis</h2>
-               <p> <b>Figure 5</b>: PCA plots.
-               <p>We first identify the distinct graphic profiles present in the manuscript using a Combined PCA.
-                Rather than analysing individual letters, we perform PCA on a selected set of letters to capture broader stylistic tendencies. Letters were chosen based on the quality of their reconstructed prototypes and their morphological diversity (‹a›, ‹d›, ‹g›, ‹m›, ‹o›, ‹t›).
-                
-                The resulting PCA reveals four distinct clusters (GP1–GP4), corresponding to recurring graphic profiles characterised by shared morphological traits.
-                </p>
-                <div class="side-by-side">
-                    <img src="images/comb_PCA_plot.png" alt="Graphic Profile Discovery: Combining PCA plot"> 
-                    <p><b>Figure 5a: </b> Combined PCA plot for from the letters "a","d","g","m","o","t". </p>
-                    <img src="images/a_PCA_plot.png" alt="Examples">
-                     <p><b>Figure 5b:</b> PCA plot for the letter "a".</p>
-                </div>
+            <h2>Graphic Profile Discovery</h2>
+            <p>Using a Combined PCA across multiple letters (‹a›, ‹d›, ‹g›, ‹m›, ‹o›, ‹t›), we identify four distinct graphic profiles (GP1–GP4) characterized by shared morphological traits. PCA plots create a map of the graphic landscape, where clustering reveals similar expression profiles and helps identify key discriminative features.</p>
+            
+            <p><b>Figure 4:</b> PCA plots revealing the graphic landscape of the manuscript.
+            <div class="side-by-side">
+                <img src="images/comb_PCA_plot.png" alt="Graphic Profile Discovery: Combining PCA plot"> 
+                <p><b>Figure 4a: </b> Combined PCA plot for letters "a","d","g","m","o","t". </p>
+                <img src="images/a_PCA_plot.png" alt="Examples">
+                <p><b>Figure 4b:</b> PCA plot for the letter "a".</p>
+            </div>
             </p>
-            <p>With the graphic profiles established and their relation to existing literature assessed,
-                we now focus on the detailed examination of individual letters. Using their respective PCA plots, our aim is twofold: first, to identify the key discriminative features of each graphic profile; and second, to provide an objective
-                morphological description of the manuscript’s graphic landscape.</p>
         </div>
 
         <div class="Method"
         style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
-        <h2>Statistical Analysis</h2>
-        <p> We further refine the graphic profiles through a statistical analysis of complementary aspects of scribal practice.
-            This analysis examines abbreviative habits and line management to assess their discriminative potential, highlight convergences or divergences between profiles, and provide a more nuanced view of the manuscript’s graphic landscape.
-            The aspects considered include overall (Figure 6a) and specific abbreviation practices, the distribution of abbreviations within the line (Figure 6b), and line density and consistency.
-            </p>
+            <h2>Statistical Analysis</h2>
+            <p>We further refine the graphic profiles through statistical analysis of abbreviative habits and line management, providing a more nuanced view of scribal practice and its relationship to graphic variation.</p>
             <div class="side-by-side">
                 <img src="images/abbr_usage.png" alt="Statistics on abbreviation usage."> 
-                <p><b>Figure 6a: </b> </p>
+                <p><b>Figure 5a: </b> Abbreviation usage patterns.</p>
                 <img src="images/abbr_line_disposition.png" alt="Disposition of abbreviation marks in line.">
-                 <p><b>Figure 6b:</b> </p>
+                <p><b>Figure 5b:</b> Distribution of abbreviations within lines.</p>
             </div>
         </div>
 

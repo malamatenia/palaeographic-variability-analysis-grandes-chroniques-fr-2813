@@ -252,6 +252,14 @@ p {
     line-height: 1.6;
 }
 
+.para ul {
+    line-height: 1.8;
+}
+
+.para ul li {
+    margin-bottom: 0.8em;
+}
+
 .row::after {
     content: "";
     clear: both;
