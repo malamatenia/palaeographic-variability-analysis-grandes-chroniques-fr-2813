@@ -7,7 +7,7 @@
 
 <head>
     <!--Idea stolen from OSV-5M -->
-    <title>Variability Analysis</title> <!--add title-->
+    <title>Hand Variability Analysis on Paris, BnF, fr., 2813</title> <!--add title-->
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
@@ -113,7 +113,7 @@
                 the underlying morphological variations, we visualize the main variations of the prototypes
                 using Principal Component Analysis (PCA). Rather than relying on predefined stylistic
                 categories, this method allows the structure of variation to emerge directly from the data. </p>
-                <p> <b>Figure 1:</b> The first four Principal Components for the letter ‹a› in our dataset. Red and blue regions indicate
+                <p> <b>Figure 3:</b> The first four Principal Components for the letter ‹a› in our dataset. Red and blue regions indicate
                     areas of strongest deviation from the mean in opposite directions, while white signifies minimal contribution to
                     variation. Percentages refer to the total variance explained by each component.
                 <figure class="centered-image"> 
@@ -124,9 +124,9 @@
             <p>To interpret the red and blue regions highlighted in the PC1 visualization — and
                 thereby explain the morphological variability — we visualize the gradation of PC1, by adding
                 or subtracting integer multiples of PC1, from –3λ1 to +3λ1, to the mean image M, as illustrated
-                in Figure 7. The eigenvalue λ₁ indicates the amount of variation explained by PC1 and
+                in Figure 4. The eigenvalue λ₁ indicates the amount of variation explained by PC1 and
                 determines the amplitude of the deformation.</p>
-            <p> <b>Figure 2:</b>  Principal Component Interpretation: Gradation along the first principal component for the letter ‹a›,
+            <p> <b>Figure 4:</b>  Principal Component Interpretation: Gradation along the first principal component for the letter ‹a›,
                 visualized at key positions from \(-3\lambda_1\) to \(+3\lambda_1\).
                 <figure class="centered-image">
                     <div class="clickable-image">
@@ -148,20 +148,39 @@
             representation, instead of yielding binary attributions or fixed similarity scores, can assist the
             palaeographer in mapping graphic variation, as well as objectively describe key morphological
             differences.</p>    
-        <p> <b>Figure 3</b>: PCA plots.
+       
                <h2>Graphic Profile Discovery and Analysis</h2>
+               <p> <b>Figure 5</b>: PCA plots.
+               <p>We first identify the distinct graphic profiles present in the manuscript using a Combined PCA.
+                Rather than analysing individual letters, we perform PCA on a selected set of letters to capture broader stylistic tendencies. Letters were chosen based on the quality of their reconstructed prototypes and their morphological diversity (‹a›, ‹d›, ‹g›, ‹m›, ‹o›, ‹t›).
+                
+                The resulting PCA reveals four distinct clusters (GP1–GP4), corresponding to recurring graphic profiles characterised by shared morphological traits.
+                </p>
                 <div class="side-by-side">
                     <img src="images/comb_PCA_plot.png" alt="Graphic Profile Discovery: Combining PCA plot"> 
-                    <p><b>Figure 2a: </b> </p>
+                    <p><b>Figure 5a: </b> Combined PCA plot for from the letters "a","d","g","m","o","t". </p>
                     <img src="images/a_PCA_plot.png" alt="Examples">
-                     <p><b>Figure 2b:</b> PCA plot for the letter "a".</p>
+                     <p><b>Figure 5b:</b> PCA plot for the letter "a".</p>
                 </div>
             </p>
+            <p>With the graphic profiles established and their relation to existing literature assessed,
+                we now focus on the detailed examination of individual letters. Using their respective PCA plots, our aim is twofold: first, to identify the key discriminative features of each graphic profile; and second, to provide an objective
+                morphological description of the manuscript’s graphic landscape.</p>
         </div>
 
         <div class="Method"
         style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
         <h2>Statistical Analysis</h2>
+        <p> We further refine the graphic profiles through a statistical analysis of complementary aspects of scribal practice.
+            This analysis examines abbreviative habits and line management to assess their discriminative potential, highlight convergences or divergences between profiles, and provide a more nuanced view of the manuscript’s graphic landscape.
+            The aspects considered include overall (Figure 6a) and specific abbreviation practices, the distribution of abbreviations within the line (Figure 6b), and line density and consistency.
+            </p>
+            <div class="side-by-side">
+                <img src="images/abbr_usage.png" alt="Statistics on abbreviation usage."> 
+                <p><b>Figure 6a: </b> </p>
+                <img src="images/abbr_line_disposition.png" alt="Disposition of abbreviation marks in line.">
+                 <p><b>Figure 6b:</b> </p>
+            </div>
         </div>
 
         <div class="Method"
@@ -182,20 +201,15 @@
                 <h2>Cite Us</h2>
             </a>
             <div class="bibtex-container">
-                <pre class="code">
-                    <code class="language-bibtex">
-                        @article{vlachou2025grandes-chroniques-fr-2813,
-                            title = {Interpretable Deep Learning for Palaeographic Variability
-                                Analysis; revisiting the scribal hands of Charles V’ Grandes
-                                Chroniques de France (Paris, BnF, fr., 2813)},
-                            author = {Vlachou-Efstathiou, Malamatenia},
-                            publisher = {Scriptorium (forthcoming)},
-                            year = {2026},
-                            url = {}
-                        }
-                    </code>                        
-                    <button class="copy-code-button"><i class="fa-regular fa-clone"></i></button>
-                </pre>
+                <pre class="code"><code class="language-bibtex">@article{vlachou2025grandes-chroniques-fr-2813,
+    title = {Interpretable Deep Learning for Palaeographic Variability
+        Analysis; revisiting the scribal hands of Charles V' Grandes
+        Chroniques de France (Paris, BnF, fr., 2813)},
+    author = {Vlachou-Efstathiou, Malamatenia},
+    publisher = {Scriptorium (forthcoming)},
+    year = {2026},
+    url = {}
+}</code><button class="copy-code-button"><i class="fa-regular fa-clone"></i></button></pre>
             </div>
         </div>
 

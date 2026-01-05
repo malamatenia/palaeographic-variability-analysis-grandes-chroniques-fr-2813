@@ -41,6 +41,11 @@ max-width: 100%;
     display: inline-block;
 }
 
+.bibtex-container pre {
+    padding: 0.75em;
+    margin: 0;
+}
+
 pre {
     position: relative;
     padding: 1em;
