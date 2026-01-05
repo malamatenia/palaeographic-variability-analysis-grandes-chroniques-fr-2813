@@ -247,6 +247,11 @@ p {
     margin-bottom: 20px;
 }
 
+.para {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .para p {
     max-width: 100%;
     line-height: 1.6;
