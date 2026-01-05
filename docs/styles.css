@@ -1,0 +1,361 @@
+/* General styles */
+.code,
+code {
+    display: block;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 18px;
+  }
+
+.button {
+background-color: #fff;
+border-color: #dbdbdb;
+border-width: 1px;
+color: #363636;
+cursor: pointer;
+justify-content: center;
+padding-bottom: calc(.5em - 1px);
+padding-left: 1em;
+padding-right: 1em;
+padding-top: calc(.5em - 1px);
+text-align: center;
+white-space: nowrap  
+}
+
+.copy-code-button {
+position: absolute;
+top: 0.5em;
+right: 0.5em;
+padding: 0.5em 1em;
+font-size: 14px;
+background-color: #333;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+max-width: 100%;
+}
+.bibtex-container {
+    position: relative;
+    display: inline-block;
+}
+
+pre {
+    position: relative;
+    padding: 1em;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+  }
+  
+  code {
+    display: block;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+  }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    margin: 15px 5px !important;
+    padding: 10px;
+}
+
+header {
+    text-align: center;
+    color: #333;
+}
+
+/* Center authors */
+.authors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.2rem; /* Adjusted font size */
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Center affiliations */
+.affiliations {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1rem; /* Adjusted font size */
+}
+
+.conference {
+    text-align: center;
+}
+
+/* Container styles */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.imgcontainer {
+    width: 90%;
+    margin: auto;
+}
+
+/* Center icon links */
+.icon-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* Image styles */
+.img-with-text {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Icon styles */
+.icon {
+    width: 80px;
+    height: 80px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.right-aligned-image {
+    margin-left: auto;
+    align-self: flex-start;
+    margin-top: 0;
+}
+
+.right-aligned-image img {
+    max-width: 300px;
+    height: auto;
+}
+
+/* Link styles */
+.icon-links a {
+    display: inline-block;
+    margin: 0 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.icon-links a:hover img {
+    filter: brightness(70%);
+}
+
+h1 {
+    font-size: 2rem;
+    /* Adjusted font size */
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    /* Adjusted font size */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.icon-label {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.References p ul li {
+    font-size: 0.8rem;
+}
+
+.teaser-image img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.centered-image {
+    text-align: center;
+}
+
+.centered-image img {
+    margin: 0 auto;
+    max-width: 90%;
+    height: auto;
+}
+
+.logo-image {
+    text-align: center;
+}
+
+.logo-image img {
+    margin: 0 auto;
+    max-width: 90%;
+    height: 6;
+}
+
+.conference-image img {
+    margin: 0 auto;
+    width: 100px;
+    height: auto;
+}
+
+.abstract {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+}
+
+.abstract h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.para p {
+    max-width: 100%;
+    line-height: 1.6;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: table;
+}
+
+.column {
+    float: left;
+    width: 24%;
+    padding: 2px;
+}
+
+.image-pair {
+    flex: 1;
+    margin-bottom: 2px;
+}
+
+.image-pair img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Flex container for side by side images */
+.side-by-side {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.side-by-side img {
+    max-width: 40%;
+    height: auto;
+}
+
+/* Style for clickable images */
+.clickable-image img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.clickable-image img:hover {
+    transform: scale(1.05);
+
+    /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption { 
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+}
