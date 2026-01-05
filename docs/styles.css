@@ -260,6 +260,13 @@ p {
     margin-bottom: 0.8em;
 }
 
+.Method p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
 .row::after {
     content: "";
     clear: both;
