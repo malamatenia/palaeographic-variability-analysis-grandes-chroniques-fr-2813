@@ -421,12 +421,16 @@ def pca_analysis(characters, mode, prototype_folder, annotation_json_path, resul
         raise ValueError("Mode must be either 'all' or 'separate'.")
 
 
-def plot_pca_scatter(pca_result, included_labels, mapping, images, image_shape, save_path, components=(0, 1), outliers=False, protos=False, annotation_json_path=None, principal_components=None):
+def plot_pca_scatter(pca_result, included_labels, mapping, images, image_shape, save_path, components=(0, 1), outliers=False, protos=False, annotation_json_path=None, principal_components=None, pca_model=None):
 
     """
     Plots a scatter plot of PCA projections, optionally including excluded projections, with annotations and images.
     Uses GP-based markers and colors for the points.
     """
+    if pca_model is None:
+        raise ValueError("pca_model must be provided to access explained variance")
+    explained_variance = pca_model.explained_variance_
+    
     if annotation_json_path is None:
         raise ValueError("annotation_json_path must be provided")
 
@@ -466,8 +470,8 @@ def plot_pca_scatter(pca_result, included_labels, mapping, images, image_shape, 
             img_label = combined_labels[i]
             
             # Position for the image
-            x_pos = combined_projections[i, components[0]] - 0.21
-            y_pos = combined_projections[i, components[1]] - 0.05
+            x_pos = combined_projections[i, components[0]] / np.sqrt(explained_variance[components[0]]) - 0.08 #0.21
+            y_pos = combined_projections[i, components[1]] / np.sqrt(explained_variance[components[1]]) - 0.05
             y_offset = 0.05 if i < len(included_labels) else -0.15
 
             # Create image box
@@ -530,15 +534,27 @@ def plot_pca_scatter(pca_result, included_labels, mapping, images, image_shape, 
         annotation_color = '#36454F'
 
         # Plot point and annotation
-        plt.scatter(combined_projections[i, components[0]] - 0.03, 
-                    combined_projections[i, components[1]] + 0.02,
-                    color=point_color, marker=marker, alpha=1, 
-                    label=annotation_label if i < len(included_labels) else '', 
-                    zorder=2)
+        plt.scatter(
+            combined_projections[i, components[0]] / np.sqrt(explained_variance[components[0]]) - 0.03,
+            combined_projections[i, components[1]] / np.sqrt(explained_variance[components[1]]) + 0.02,
+            color=point_color,
+            marker=marker,
+            alpha=1,
+            label=annotation_label if i < len(included_labels) else '',
+            zorder=2
+        )
 
-        plt.annotate(annotation_label, 
-                     (combined_projections[i, components[0]] + 0.03, combined_projections[i, components[1]]), 
-                     fontsize=10, alpha=1, color=annotation_color, zorder=3)
+        plt.annotate(
+            annotation_label,
+            (
+                combined_projections[i, components[0]] / np.sqrt(explained_variance[components[0]]) + 0.03,
+                combined_projections[i, components[1]] / np.sqrt(explained_variance[components[1]])
+            ),
+            fontsize=10,
+            alpha=1,
+            color=annotation_color,
+            zorder=3
+        )
     
     # Axis labels and title
     if plt.rcParams.get('text.usetex', False):
@@ -581,6 +597,7 @@ def explained_variance_plot(pca, included_labels, folio_mapping, character, save
     """
     # Explained variance (cumulative variance explained by the principal components)
     explained_variance_ratio = pca.explained_variance_ratio_
+    explained_variance =  pca.explained_variance_ #
 
     # Plot the cumulative explained variance ratio
     plt.figure(figsize=(8, 6))
