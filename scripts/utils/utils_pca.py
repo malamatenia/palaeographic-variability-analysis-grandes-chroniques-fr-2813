@@ -347,10 +347,14 @@ def pca_analysis(characters, mode, prototype_folder, annotation_json_path, resul
             raise ValueError(f"No images loaded for characters: {characters}")
 
         print(f"Total folders processed: {included_images.shape[0]}")
+       
 
         num_folders = len(set(included_labels))
         pca = PCA(n_components=min(num_folders, included_images.shape[0]))
         pca_result = pca.fit_transform(included_images)
+        
+        print(f"included_images shape: {included_images.shape}")
+        print(f"n_components: {num_folders}")
 
         mean_image = pca.mean_.reshape((image_shape[0]*image_shape[1]*len(all_character_range_strings),))
 
@@ -437,7 +441,7 @@ def plot_pca_scatter(pca_result, included_labels, mapping, images, image_shape, 
     # Set up color map and figure
     cmap = LinearSegmentedColormap.from_list('custom_cmap', ['blue', 'white', 'red'], N=256)
     plt.figure(figsize=(11, 11))
-    plt.gca().set_aspect('equal', adjustable='datalim')
+    #plt.gca().set_aspect('equal', adjustable='datalim')
 
     # Create the label mapping for annotation (create_metadata_mapping should be implemented)
     _, gp_mapping = create_metadata_mapping(annotation_json_path)
